@@ -43,9 +43,3 @@ if ingredients_list:
 
     #st.write(my_insert_stmt)    
     #st.stop ()
-    insertdata = st.button('Submit Order')
-    if insertdata:
-        session.sql(my_insert_stmt).collect()
-        st.success('Your Smoothie is ordered!', icon="✅")
-  
-
