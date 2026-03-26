@@ -8,7 +8,7 @@ session = cnx.session()
 # Write directly to the app.
 st.title(f"Customize YOUR Smoothie :cup_with_straw: {st.__version__}")
 #session = get_active_session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop()
 import streamlit as st
@@ -19,6 +19,7 @@ st.write("The name of YOUR smoothie will be:", name_on_order)
 pd_df = my_dataframe.to_pandas()
 st.dataframe(pd_df)
 st.stop()
+
 ingredients_list = st.multiselect(
     "Choose upto 5 ingredients:"
      ,my_dataframe
