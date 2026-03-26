@@ -8,7 +8,7 @@ session = cnx.session()
 # Write directly to the app.
 st.title(f"Customize YOUR Smoothie :cup_with_straw: {st.__version__}")
 #session = get_active_session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop()
 import streamlit as st
