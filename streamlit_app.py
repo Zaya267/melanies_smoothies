@@ -12,7 +12,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 import streamlit as st
-
+import requests
 name_on_order = st.text_input("Name Of Smoothie:")
 st.write("The name of YOUR smoothie will be:", name_on_order)
 
@@ -38,5 +38,5 @@ if ingredients_list:
     if insertdata:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
-import requests  
+  
 
